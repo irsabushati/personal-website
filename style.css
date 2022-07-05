@@ -1,0 +1,159 @@
+/* Author: Irsa Bushati 
+   Date: 4.07.2022 
+   Project: Personal Website */
+
+:root {
+ --background : #1c1c1c;
+ --pink: #f488d7;
+ --hoverpink: #d9ced6;
+ --purple: #5d33fc;
+ --neon:#e3f844;
+ --typewriterSpeed:3s;
+}
+@font-face {
+	font-family: 'AlteHaasGroteskBold';
+	src: url(fonts/Alte_Haas_Grotesk_Bold.ttf);
+}
+@font-face {
+	font-family: 'StepsMonoThin';
+	src: url(fonts/Steps-Mono-Thin.otf);
+}
+@font-face {
+	font-family: 'StepsMono';
+	src: url(fonts/Steps-Mono.otf);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+body {
+    background-color: var(--background);
+	min-width: 100%;
+}
+
+/* Navigation bar */ 
+nav {
+    margin-top: 29px;
+    margin-right: 50px;
+	background-color: none;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	position: fixed; 
+  	top: 0; 
+  	width: 100%;
+	z-index: 100000;
+}
+nav ul li {
+	display: inline-block;
+    margin-right:30px;
+	font-family: 'AlteHaasGroteskBold', sans-serif;
+}
+nav ul li a {
+	color:var(--pink);
+	text-decoration:none;
+	padding: 20px;
+	font-size: 20px;
+}
+nav ul li #contact-me {
+	text-decoration: underline;
+}
+nav ul li a:hover {
+	color:var(--hoverpink);
+}
+
+/* Sections */ 
+
+section {
+	height:100vh;
+	scroll-snap-align: start;
+	overflow-y: scroll;
+	width: 100%;
+	z-index: 1;
+}
+
+.container {
+	scroll-snap-type: y mandatory;
+	height:100vh;
+	width: 100%;
+}
+.three {
+	background-color: var(--neon);
+}
+.four {
+	background-color: var(--purple);
+}
+
+/* Header */
+
+header h1 {
+	font-family: 'StepsMono', sans-serif;
+	color: var(--neon);
+	font-size: 70px;
+	text-align: center;
+	margin-top: 300px;
+	position:relative;
+	z-index:10000;
+}
+
+header h2 {
+	font-family:'AlteHaasGroteskBold', sans-serif;
+	color: var(--neon);
+	font-size: 20px;
+	position: absolute;
+	top:48%;
+	left: 30%;
+	z-index:10000;
+}
+
+#neon-shadow{
+	width: 420px;
+	height: 420px;
+	position: absolute;
+	left:5%;
+	top:47%;
+	z-index: 0;
+}
+#pink-circle{
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	left:8%;
+	top:55%;
+	z-index: 1;
+}
+
+/* Header 1  - Animation */
+
+h1::before,
+h1::after{
+	content: "";
+	position: absolute;
+	top:0;
+	right:0;
+	left:0;
+	bottom:0;
+}
+h1::before{
+	background: var(--background);
+	animation: typewriter var(--typewriterSpeed) steps(27) forwards; 
+}
+h1::after{
+	width: 0.125em;
+	background: var(--neon);
+	animation: typewriter var(--typewriterSpeed) steps(27) forwards,
+	blink 1s steps(27) infinite;
+}
+@keyframes typewriter {
+	to {
+		left:80%;
+	}
+}
+@keyframes blink {
+	to {
+		background: transparent;
+	}
+}
+
+/* Fade up animation */
+
