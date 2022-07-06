@@ -22,13 +22,19 @@
 	font-family: 'StepsMono';
 	src: url(fonts/Steps-Mono.otf);
 }
-
 html {
 	scroll-behavior: smooth;
 }
 body {
     background-color: var(--background);
 	min-width: 100%;
+}
+.row {
+	padding: 110px;
+}
+#underline {
+	text-decoration: underline;
+	text-underline-offset: 4px;
 }
 
 /* Navigation bar */ 
@@ -54,6 +60,8 @@ nav ul li a {
 	text-decoration:none;
 	padding: 20px;
 	font-size: 20px;
+	text-decoration: underline;
+	text-underline-offset: 4px;
 }
 nav ul li #contact-me {
 	text-decoration: underline;
@@ -69,16 +77,67 @@ section {
 	scroll-snap-align: start;
 	overflow-y: scroll;
 	width: 100%;
-	z-index: 1;
+	z-index: 1; 
 }
 
-.container {
+.mydiv {
 	scroll-snap-type: y mandatory;
 	height:100vh;
 	width: 100%;
 }
+
+/* Section one */
+.one {
+	background-color: var(--background);
+}
+.one .tags {
+	margin-top: 50px;
+}
+.one #one-one , #one-two , #one-three , #two-one , #two-two , 
+#two-three , #three-one , #three-two , #three-three , #three-four , #three-five {
+	display:inline-block;
+	font-family:'AlteHaasGroteskBold', sans-serif;
+	font-size: 22px; 
+	margin-right: 10px;
+}
+/* Symbol tags */
+#one-one , #three-two , #three-five{
+	background-color: white;
+	border-radius: 50%;
+	padding: 1px 11px 1px 11px;
+}
+/* "@student" tag */
+#two-two {
+	background-color: white;
+	border-radius: 20px;
+	padding: 1px 15px 1px 15px;
+}
+/* pink background color tags */
+#one-three , #three-one {
+	background-color: var(--pink);
+	border-radius: 20px;
+	padding: 1px 15px 1px 15px;
+}
+
+/* neon background color tags */
+#one-two,  #two-three , #three-three{
+	background-color: var(--neon);
+	border-radius: 20px;
+	padding: 1px 15px 1px 15px;
+}
+
+/* purple background color tags */
+#two-one , #three-four {
+	background-color: var(--purple);
+	border-radius: 20px;
+	padding: 1px 15px 1px 15px;	
+}
+
 .three {
 	background-color: var(--neon);
+}
+.three .desc {
+	text-align: justify;
 }
 .four {
 	background-color: var(--purple);
@@ -87,46 +146,23 @@ section {
 /* Header */
 
 header h1 {
+	margin-top: 150px;
 	font-family: 'StepsMono', sans-serif;
 	color: var(--neon);
 	font-size: 70px;
-	text-align: center;
-	margin-top: 300px;
-	position:relative;
-	z-index:10000;
 }
 
 header h2 {
 	font-family:'AlteHaasGroteskBold', sans-serif;
 	color: var(--neon);
 	font-size: 20px;
-	position: absolute;
-	top:48%;
-	left: 30%;
-	z-index:10000;
 }
 
-#neon-shadow{
-	width: 420px;
-	height: 420px;
-	position: absolute;
-	left:5%;
-	top:47%;
-	z-index: 0;
-}
-#pink-circle{
-	width: 200px;
-	height: 200px;
-	position: absolute;
-	left:8%;
-	top:55%;
-	z-index: 1;
-}
 
 /* Header 1  - Animation */
-
-h1::before,
-h1::after{
+/*
+header h1::before,
+header h1::after{
 	content: "";
 	position: absolute;
 	top:0;
@@ -134,12 +170,13 @@ h1::after{
 	left:0;
 	bottom:0;
 }
-h1::before{
+header h1::before{
 	background: var(--background);
 	animation: typewriter var(--typewriterSpeed) steps(27) forwards; 
 }
-h1::after{
+header h1::after{
 	width: 0.125em;
+	height:100px;
 	background: var(--neon);
 	animation: typewriter var(--typewriterSpeed) steps(27) forwards,
 	blink 1s steps(27) infinite;
@@ -154,6 +191,27 @@ h1::after{
 		background: transparent;
 	}
 }
+*/
+/* Section About */
 
-/* Fade up animation */
+.number {
+	font-size: 90px;
+	font-family: 'AlteHaasGroteskBold', sans-serif;
+	-webkit-text-fill-color: transparent;
+  	-webkit-text-stroke: 4px;
+	display:inline-block;
+}
+.headline {
+	display:inline-block;
+	margin-left:40px;
+}
+
+#profile {
+	/*border-radius: 50%;*/
+	width: 500px;
+	height: 350px;
+	margin-left:90px;
+	/*border: 4px solid var(--background);
+	border-spacing: 15px;*/
+}
 
