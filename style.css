@@ -29,9 +29,6 @@ body {
     background-color: var(--background);
 	min-width: 100%;
 }
-.row {
-	padding: 110px;
-}
 #underline {
 	text-decoration: underline;
 	text-underline-offset: 4px;
@@ -76,22 +73,29 @@ section {
 	height:100vh;
 	scroll-snap-align: start;
 	overflow-y: scroll;
-	width: 100%;
-	z-index: 1; 
+	min-width: none;
 }
-
 .mydiv {
 	scroll-snap-type: y mandatory;
 	height:100vh;
-	width: 100%;
+	min-width: 100%;
 }
-
 /* Section one */
+
 .one {
 	background-color: var(--background);
 }
 .one .tags {
 	margin-top: 50px;
+}
+.one #links a {
+	color:gray;
+	text-decoration: none;
+}
+.one #links {
+	font-family: 'StepsMono', sans-serif;
+	font-size: 20px; 
+	color:gray;
 }
 .one #one-one , #one-two , #one-three , #two-one , #two-two , 
 #two-three , #three-one , #three-two , #three-three , #three-four , #three-five {
@@ -100,12 +104,36 @@ section {
 	font-size: 22px; 
 	margin-right: 10px;
 }
+
 /* Symbol tags */
-#one-one , #three-two , #three-five{
+#one-one , #three-five{
 	background-color: white;
 	border-radius: 50%;
-	padding: 1px 11px 1px 11px;
+	padding: 1px 9px 1px 9px;
+	animation-name: spin;
+	animation-duration: 3000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear; 
 }
+
+@keyframes spin {
+    50% {
+        transform:rotate(-90deg);
+    }
+}
+
+#three-two {
+	background-color: white;
+	border-radius: 50%;
+	padding: 1px 9px 1px 9px;
+	animation: color-change-heart 7s infinite;
+}
+@keyframes color-change-heart {
+	50% { 
+		color: var(--pink);
+	}
+}
+
 /* "@student" tag */
 #two-two {
 	background-color: white;
@@ -117,6 +145,12 @@ section {
 	background-color: var(--pink);
 	border-radius: 20px;
 	padding: 1px 15px 1px 15px;
+	animation: color-change-1 7s infinite;
+}
+@keyframes color-change-1 {
+	50% { 
+		background-color: var(--purple);
+	}
 }
 
 /* neon background color tags */
@@ -124,6 +158,13 @@ section {
 	background-color: var(--neon);
 	border-radius: 20px;
 	padding: 1px 15px 1px 15px;
+	animation: color-change-2 7s infinite;
+}
+@keyframes color-change-2 {
+	50% { 
+		color: var(--neon);
+		background-color: var(--background);
+	}
 }
 
 /* purple background color tags */
@@ -131,15 +172,24 @@ section {
 	background-color: var(--purple);
 	border-radius: 20px;
 	padding: 1px 15px 1px 15px;	
+	animation: color-change-3 7s infinite;
+}
+@keyframes color-change-3 {
+	50% { 
+		background-color: var(--pink);
+	}
 }
 
-.three {
+.two {
 	background-color: var(--neon);
 }
-.three .desc {
+
+.two .desc {
 	text-align: justify;
+
+	
 }
-.four {
+.three {
 	background-color: var(--purple);
 }
 
@@ -150,6 +200,7 @@ header h1 {
 	font-family: 'StepsMono', sans-serif;
 	color: var(--neon);
 	font-size: 70px;
+
 }
 
 header h2 {
@@ -159,39 +210,6 @@ header h2 {
 }
 
 
-/* Header 1  - Animation */
-/*
-header h1::before,
-header h1::after{
-	content: "";
-	position: absolute;
-	top:0;
-	right:0;
-	left:0;
-	bottom:0;
-}
-header h1::before{
-	background: var(--background);
-	animation: typewriter var(--typewriterSpeed) steps(27) forwards; 
-}
-header h1::after{
-	width: 0.125em;
-	height:100px;
-	background: var(--neon);
-	animation: typewriter var(--typewriterSpeed) steps(27) forwards,
-	blink 1s steps(27) infinite;
-}
-@keyframes typewriter {
-	to {
-		left:80%;
-	}
-}
-@keyframes blink {
-	to {
-		background: transparent;
-	}
-}
-*/
 /* Section About */
 
 .number {
@@ -207,13 +225,13 @@ header h1::after{
 }
 
 #profile {
-	width: 500px;
-	height: 350px;
-	margin-left:90px;
+	width: 80%; 
+	height: 75%; 
+	margin-top: 40px;
 }
 
 /* Section Portfolio */
-.four .portfolio-posts{
+.three .portfolio-posts {
 	width: 400px;
 	height: 400px;
 	background-color: white;
@@ -223,12 +241,12 @@ header h1::after{
 	margin-top:40px;
 	padding: 5px;
 }
-.four .portfolio-posts img {
+.three .portfolio-posts img {
 	width: 100%;
 	margin:0;
 	height:65%;
 }
-.four .portfolio-posts p {
+.three .portfolio-posts p {
 	font-size: 25px;
 	text-align: center;
 	margin-top: 30px;
