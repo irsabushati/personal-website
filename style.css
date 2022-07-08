@@ -1,5 +1,5 @@
 /* Author: Irsa Bushati 
-   Date: 4.07.2022 
+   Date: 4.07.2022 - 8.07.2022
    Project: Personal Website */
 
 :root {
@@ -8,8 +8,9 @@
  --hoverpink: #d9ced6;
  --purple: #5d33fc;
  --neon:#e3f844;
- --typewriterSpeed:3s;
 }
+
+/* Fonts */
 @font-face {
 	font-family: 'AlteHaasGroteskBold';
 	src: url(fonts/Alte_Haas_Grotesk_Bold.ttf);
@@ -22,6 +23,7 @@
 	font-family: 'StepsMono';
 	src: url(fonts/Steps-Mono.otf);
 }
+
 html {
 	scroll-behavior: smooth;
 }
@@ -80,11 +82,13 @@ section {
 	height:100vh;
 	min-width: 100%;
 }
-/* Section one */
 
+/* Section one - Intro */
 .one {
 	background-color: var(--background);
 }
+
+/* Colorful tags */
 .one .tags {
 	margin-top: 50px;
 }
@@ -105,7 +109,7 @@ section {
 	margin-right: 10px;
 }
 
-/* Symbol tags */
+/* Symbol tags and animation */
 #one-one , #three-five{
 	background-color: white;
 	border-radius: 50%;
@@ -135,12 +139,13 @@ section {
 }
 
 /* "@student" tag */
+
 #two-two {
 	background-color: white;
 	border-radius: 20px;
 	padding: 1px 15px 1px 15px;
 }
-/* pink background color tags */
+/* Pink background color tags and animation */
 #one-three , #three-one {
 	background-color: var(--pink);
 	border-radius: 20px;
@@ -153,7 +158,7 @@ section {
 	}
 }
 
-/* neon background color tags */
+/* Neon background color tags and animation */
 #one-two,  #two-three , #three-three{
 	background-color: var(--neon);
 	border-radius: 20px;
@@ -167,7 +172,7 @@ section {
 	}
 }
 
-/* purple background color tags */
+/* Purple background color tags and animation */
 #two-one , #three-four {
 	background-color: var(--purple);
 	border-radius: 20px;
@@ -180,27 +185,13 @@ section {
 	}
 }
 
-.two {
-	background-color: var(--neon);
-}
-
-.two .desc {
-	text-align: justify;
-
-	
-}
-.three {
-	background-color: var(--purple);
-}
-
-/* Header */
+/* Header in the first section */
 
 header h1 {
 	margin-top: 150px;
 	font-family: 'StepsMono', sans-serif;
 	color: var(--neon);
 	font-size: 70px;
-
 }
 
 header h2 {
@@ -209,8 +200,15 @@ header h2 {
 	font-size: 20px;
 }
 
-
 /* Section About */
+
+.two {
+	background-color: var(--neon);
+}
+
+.two .desc {
+	text-align: justify;
+}
 
 .number {
 	font-size: 90px;
@@ -219,6 +217,7 @@ header h2 {
   	-webkit-text-stroke: 4px;
 	display:inline-block;
 }
+
 .headline {
 	display:inline-block;
 	margin-left:40px;
@@ -231,6 +230,10 @@ header h2 {
 }
 
 /* Section Portfolio */
+
+.three {
+	background-color: var(--purple);
+}
 .three .portfolio-posts {
 	width: 400px;
 	height: 400px;
@@ -250,7 +253,6 @@ header h2 {
 	font-size: 25px;
 	text-align: center;
 	margin-top: 30px;
-	padding: 10px;
 	font-family: 'AlteHaasGroteskBold', sans-serif; 
 	line-height: normal;
 }
